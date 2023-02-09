@@ -9,7 +9,7 @@ class KNearestNeighbor:
         pass
 
     def fit(self, X, y):
-        # X - train points, y - training labels
+        # X - training points, y - training labels
         self.X_train = X
         self.y_train = y
 
@@ -27,7 +27,7 @@ class KNearestNeighbor:
         return self.predict_labels(dists, k=k)
 
     def compute_distances_two_loops(self, X):
-        # distances between test points X and train points self.X_train in two loops
+        # distances between test points X and training points self.X_train in two loops
         num_test = X.shape[0]
         num_train = self.X_train.shape[0]
         dists = np.zeros((num_test, num_train))
@@ -38,7 +38,7 @@ class KNearestNeighbor:
         return dists
 
     def compute_distances_one_loop(self, X):
-        # distances between test points X and train points self.X_train in one loop
+        # distances between test points X and training points self.X_train in one loop
         num_test = X.shape[0]
         num_train = self.X_train.shape[0]
         dists = np.zeros((num_test, num_train))
@@ -48,7 +48,7 @@ class KNearestNeighbor:
         return dists
 
     def compute_distances_no_loops(self, X):
-        # distances between test points X and train points self.X_train without any loops
+        # distances between test points X and training points self.X_train without any loops
         num_test = X.shape[0]
         num_train = self.X_train.shape[0]
         dists = np.zeros((num_test, num_train))
