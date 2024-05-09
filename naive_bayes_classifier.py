@@ -42,7 +42,7 @@ class NaiveBayesGD:
                 probabilities[i, j] = np.log(frequencies[j])
                 for k in range(self.n_features):
                     probabilities[i, j] -= (X[i, k] - means[j, k]) ** 2 / (2 * variances[j, k])
-                
+                    
         return probabilities
     
     def predict(self, X):

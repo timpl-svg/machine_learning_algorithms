@@ -62,7 +62,7 @@ class KNearestNeighbor:
         y_pred = np.zeros(num_test)
         closest_y = np.zeros((num_test, k), dtype=int)
         for i in range(num_test):
-            closest_y[i] = np.argsort(dists[i])[:k]
-            y_pred[i] = np.bincount(self.y_train[closest_y[i].tolist()]).argmax()
+            closest_y[i] = np.argsort(dists[i])[:k] # finding KNN
+            y_pred[i] = np.bincount(self.y_train[closest_y[i].tolist()]).argmax() # most common
             
         return y_pred
